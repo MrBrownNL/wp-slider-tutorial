@@ -7,7 +7,9 @@ if (!class_exists('MV_Slider_Shortcode')) {
 		}
 
 		public function add_shortcode($atts = array(), $content = null, $tag = '') {
-			$atts = array_change_key_case($atts, CASE_LOWER);
+			if (is_array($atts)) {
+				$atts = array_change_key_case( $atts, CASE_LOWER );
+			}
 
 			$keyValuePairs = shortcode_atts(
 				array(
